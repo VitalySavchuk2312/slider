@@ -42,7 +42,7 @@ window.onload = () => {
           this.arrowLeft.classList.add('fas-disable');
           return;
         }
-        // remove disable state from the opposite button
+        // remove disable state from the next arrow
         // if we move in the opposite direction
         for (let i = 0; i < this.slidesNumber; i++) {
           if (this.arrowRight.classList.contains('fas-disable')) {
@@ -52,7 +52,7 @@ window.onload = () => {
           this.slides[i].style.left = `${this.images[i].offset}%`;
         }
         // prevent multiple function calling if
-        // user clicks more than two times per one second
+        // user clicks more than two times per 500 milliseconds
         this.arrowLeft.classList.add('fas-disable-for-second');
         setTimeout(() => {
           this.arrowLeft.classList.remove('fas-disable-for-second');
@@ -71,7 +71,7 @@ window.onload = () => {
           this.arrowRight.classList.add('fas-disable');
           return;
         }
-        // remove disable state from the opposite button
+        // remove disable state from the prev arrow
         // if we move in the opposite direction
         for (let i = 0; i < this.slidesNumber; i++) {
           if (this.arrowLeft.classList.contains('fas-disable')) {
@@ -81,7 +81,7 @@ window.onload = () => {
           this.slides[i].style.left = `${this.images[i].offset}%`;
         }
         // prevent multiple function calling if
-        // user clicks more than two times per one second
+        // user clicks more than two times per 500 milliseconds
         this.arrowRight.classList.add('fas-disable-for-second');
         setTimeout(() => {
           this.arrowRight.classList.remove('fas-disable-for-second');
